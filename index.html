@@ -15,9 +15,11 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #3a3a4d; /* Teks utama (abu-abu gelap) */
+            /* Gradasi Pink Sakura ke Biru Langit */
+            background: linear-gradient(135deg, #a8d8ea 0%, #fecfdd 100%);
             min-height: 100vh;
+            background-attachment: fixed; /* Membuat gradien tetap */
         }
 
         .container {
@@ -27,12 +29,12 @@
         }
 
         header {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.85); /* Efek Kaca Putih */
             backdrop-filter: blur(10px);
             padding: 40px;
             border-radius: 20px;
             margin-bottom: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
             display: flex;
             align-items: center;
             gap: 40px;
@@ -43,12 +45,12 @@
             width: 180px;
             height: 180px;
             border-radius: 50%;
-            object-fit: cover; /* ubah dari contain ke cover */
-            object-position: center top; /* atur fokus ke tengah atas agar kepala tidak terpotong */
-            border: 5px solid #667eea;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            background-color: white; /* agar latar tidak transparan */
-            padding: 5px; /* beri ruang sedikit agar tidak menempel ke tepi lingkaran */
+            object-fit: cover;
+            object-position: center top;
+            border: 5px solid #D94A6F; /* Aksen Pink */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 5px;
         }
 
         .header-content {
@@ -56,13 +58,13 @@
         }
 
         h1 {
-            color: #667eea;
+            color: #005A9C; /* Aksen Biru Tua */
             font-size: 2.5em;
             margin-bottom: 10px;
         }
 
         .subtitle {
-            color: #666;
+            color: #555; /* Teks subjudul */
             font-size: 1.2em;
             margin-bottom: 20px;
         }
@@ -78,7 +80,7 @@
             align-items: center;
             gap: 8px;
             padding: 10px 20px;
-            background: #667eea;
+            background: #005A9C; /* Aksen Biru Tua */
             color: white;
             text-decoration: none;
             border-radius: 25px;
@@ -87,13 +89,13 @@
         }
 
         .social-links a:hover {
-            background: #764ba2;
+            background: #D94A6F; /* Aksen Pink saat hover */
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 4px 15px rgba(217, 74, 111, 0.4);
         }
 
         .section {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.85); /* Efek Kaca Putih */
             backdrop-filter: blur(10px);
             padding: 40px;
             border-radius: 20px;
@@ -103,61 +105,185 @@
         }
 
         h2 {
-            color: #667eea;
+            color: #005A9C; /* Aksen Biru Tua */
             font-size: 2em;
             margin-bottom: 30px;
-            border-bottom: 3px solid #667eea;
+            border-bottom: 3px solid #005A9C;
             padding-bottom: 10px;
+            display: flex;
+            align-items: center;
         }
 
+        .title-icon {
+            margin-right: 15px;
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+        }
+
+        .section h3 {
+            font-size: 1.5em;
+            color: #D94A6F; /* Aksen Pink default for H3 */
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .education-details h3 { /* Specific H3 for education */
+            color: #005A9C;
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .section h4 {
+            font-size: 1.2em;
+            color: #3a3a4d;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .section ul {
+            list-style-position: inside;
+            padding-left: 0;
+            margin-bottom: 15px;
+            margin-left: 20px;
+        }
+
+        .section ul li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .education-item {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            background-color: #fdeef3;
+            padding: 10px;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .education-details p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* Styles for Organizational Experience Grid */
+        .section-grid-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .section-image-container img {
+            width: 100%;
+            height: auto; /* Adjust height automatically */
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            object-fit: cover; /* Cover for organizational image */
+        }
+
+
+        /* == STYLES FOR PROJECT CARDS == */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Slightly wider min width */
+            gap: 30px; /* Increased gap */
             margin-top: 30px;
         }
 
         .project-card {
-            background: white;
+            background: #ffffff;
             border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 0; /* Padding removed, will be added to content */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: 1px solid #eee; /* Subtle border */
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Prevent content spill */
         }
 
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-            border-color: #667eea;
+            box-shadow: 0 8px 25px rgba(0, 90, 156, 0.15);
+            border-color: #a8d8ea;
+        }
+
+        .project-card img.project-image { /* Specific class for project images */
+            width: 100%;
+            height: 220px; /* Consistent height for project images */
+            object-fit: cover; /* Cover to fill the space */
+            border-radius: 0; /* Remove radius if image is top */
+            margin-bottom: 0; /* Remove margin */
+            background-color: #f0f0f0;
+            padding: 0; /* Remove padding */
+            border-bottom: 1px solid #eee; /* Line below image */
+        }
+
+        .project-card-content {
+            padding: 25px; /* Add padding here */
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Ensure content fills space */
         }
 
         .project-card h3 {
-            color: #667eea;
-            font-size: 1.5em;
-            margin-bottom: 15px;
+            color: #005A9C; /* Project title color */
+            font-size: 1.4em; /* Slightly smaller H3 */
+            margin-bottom: 10px; /* Reduced margin */
+            margin-top: 0;
         }
 
         .project-card p {
-            color: #666;
+            color: #555;
             margin-bottom: 15px;
             line-height: 1.6;
+            flex-grow: 0; /* Do not grow paragraph, let UL take space */
+        }
+         .project-card ul {
+             flex-grow: 1; /* Allow UL to fill remaining space */
+             margin-left: 20px; /* Indent bullet points */
+             padding-left: 0;
+         }
+         .project-card ul li {
+             margin-bottom: 8px;
+         }
+
+
+        .project-links {
+            margin-top: 20px; /* Ensure space above links */
         }
 
         .project-link {
             display: inline-block;
             padding: 10px 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #005A9C 0%, #4b8fbc 100%);
             color: white;
             text-decoration: none;
             border-radius: 25px;
             transition: all 0.3s ease;
             font-weight: 500;
+            margin-right: 10px;
+            margin-bottom: 10px;
         }
 
         .project-link:hover {
             transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 90, 156, 0.3);
         }
 
         .tech-stack {
@@ -165,21 +291,63 @@
             flex-wrap: wrap;
             gap: 10px;
             margin-top: 15px;
+            margin-bottom: 15px;
         }
 
         .tech-tag {
-            background: #f0f0f0;
-            color: #667eea;
+            background: #fdeef3;
+            color: #D94A6F;
             padding: 5px 15px;
             border-radius: 15px;
             font-size: 0.85em;
             font-weight: 500;
         }
 
+        .contact-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .contact-list li {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #3a3a4d;
+        }
+
+        .contact-list a {
+            color: #005A9C;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-list a:hover {
+            text-decoration: underline;
+            color: #D94A6F;
+        }
+
+        /* Styling for alt text when image fails to load */
+        img {
+            color: #3a3a4d;
+            font-style: italic;
+            text-align: center;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            display: block; /* Helps with layout consistency */
+        }
+        /* Specific background for education logo alt */
+        img.education-logo {
+             background-color: #fdeef3;
+        }
+         /* Specific background for project image alt */
+        img.project-image {
+             background-color: #f0f0f0;
+        }
+
+
         footer {
             text-align: center;
             padding: 20px;
-            color: white;
+            color: #3a3a4d;
             font-size: 0.9em;
         }
 
@@ -222,8 +390,25 @@
                 flex-wrap: wrap;
             }
 
-            .projects-grid {
+            .section-grid-container {
                 grid-template-columns: 1fr;
+            }
+
+            .section-image-container {
+                order: -1;
+                margin-bottom: 20px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr; /* Stack cards on mobile */
+            }
+
+            .education-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .education-logo {
+                margin-bottom: 15px;
             }
         }
     </style>
@@ -232,13 +417,17 @@
 <body>
     <div class="container">
         <header>
-            <img src="img/PasFoto.jpg" alt="Safiro Alfarisi" class="profile-img">
+             <img src="img/pasft.png" alt="Foto Profil Safiro Alfarisi" class="profile-img">
             <div class="header-content">
                 <h1>Safiro Alfarisi Haraya</h1>
-                <p class="subtitle">Undergraduate Informatic Enggineering | Software Engineer</p>
-                <p>Informatics Engineering student with a growing interest in web development. I have gained practical experience from collaborative project work. I am actively seeking an opportunity to expand my skills and make meaningful contributions while learning from experienced professionals.</p>
+                <p class="subtitle">Informatics Engineering Student | Aspiring Web Developer</p>
+                <p>I am an Informatics Engineering student with a growing interest in web development. Although I'm still at the
+                    beginning of my journey, I have practical experience developing a web application within a team for a college
+                    project. I am highly motivated to learn deeper into the web development ecosystem and am actively seeking
+                    opportunities where I can apply my knowledge, take on new challenges, and make meaningful contributions as a
+                    dedicated member of a team.</p>
                 <div class="social-links">
-                    <a href="https://github.com/safiroalfarisi" target="_blank">
+                    <a href="https://github.com/safiroalfarisi/" target="_blank">
                         <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                             <path
                                 d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
@@ -256,116 +445,214 @@
             </div>
         </header>
 
-        <!-- <section class="section">
-            <h2>Portfolio Highlights</h2>
-            <div class="projects-grid">
-             
-                <div class="project-card">
-                    <h3>FINALIS JTI WEB</h3>
-                    <p>Public-facing website for FINALIS JTI system. Provides information about finalists, achievements,
-                        and program details with responsive design.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Frontend</span>
-                        <span class="tech-tag">Responsive</span>
-                        <span class="tech-tag">Web Design</span>
-                    </div>
-                    <br>
-                    <a href="https://github.com/vanstevanzaky/FINALIS-JTI-WEB" class="project-link" target="_blank">View
-                        Project</a>
-                </div>
-                <div class="project-card">
-                    <h3>MAGNET</h3>
-                    <p>Magang Network and Tracking system - A complete solution for managing internship programs,
-                        tracking student progress, and connecting students with companies.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Full Stack</span>
-                        <span class="tech-tag">Database</span>
-                        <span class="tech-tag">Web Development</span>
-                    </div>
-                    <br>
-                    <a href="https://github.com/vanstevanzaky/MAGNET-Magang-Network-And-Tracking" class="project-link"
-                        target="_blank">View Project</a>
-                </div>
+        <section class="section">
+            <h2>
+                Education
+            </h2>
 
-                <div class="project-card">
-                    <h3>Raza Bordir</h3>
-                    <p>E-commerce platform for embroidery business. Includes product catalog, order management, and
-                        customer relationship management features.</p>
+            <div class="education-item">
+                <img src="img/logo polinema.png" alt="Logo Politeknik Negeri Malang" class="education-logo">
+                <div class="education-details">
+                    <h3>Politeknik Negeri Malang</h3>
+                    <p>2023 - Present</p>
                     <div class="tech-stack">
-                        <span class="tech-tag">Bootstrap</span>
-                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">University</span>
+                        <span class="tech-tag">Informatics Engineering</span>
                     </div>
-                    <br>
-                    <a href="https://github.com/vanstevanzaky/Raza-Bordir" class="project-link" target="_blank">View
-                        Project</a>
                 </div>
+            </div>
 
-                <div class="project-card">
-                    <h3>PWL POS</h3>
-                    <p>Point of Sale system built with Laravel framework. Features inventory management, sales tracking,
-                        and comprehensive reporting dashboard.</p>
+            <div class="education-item">
+                <img src="img/logo smala.png" alt="Logo SMAN 5 Malang" class="education-logo">
+                <div class="education-details">
+                    <h3>SMAN 5 Malang</h3>
+                    <p>2020 - 2023</p>
                     <div class="tech-stack">
-                        <span class="tech-tag">Laravel</span>
-                        <span class="tech-tag">POS System</span>
-                        <span class="tech-tag">Inventory</span>
+                        <span class="tech-tag">High School</span>
                     </div>
-                    <br>
-                    <a href="https://github.com/vanstevanzaky/PWL_POS" class="project-link" target="_blank">View
-                        Project</a>
                 </div>
+            </div>
 
-                <div class="project-card">
-                    <h3>Algoritma dan Struktur Data</h3>
-                    <p>Collection of algorithm and data structure implementations. Includes sorting algorithms, search
-                        algorithms, trees, graphs, and more.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">Algorithms</span>
-                        <span class="tech-tag">Data Structures</span>
-                        <span class="tech-tag">Problem Solving</span>
-                    </div>
-                    <br>
-                    <a href="https://github.com/vanstevanzaky/Algoritma-dan-Struktur-Data" class="project-link"
-                        target="_blank">View Project</a>
+        </section>
+
+
+        <section class="section">
+            <h2>
+                Organizational Experience
+            </h2>
+            <div class="section-grid-container">
+                <div class="section-text-content">
+                    <h3>Information Technology Department English Community (ITDEC), Politeknik Negeri Malang</h3>
+
+                    <h4>Coordinator of Frontliner in Public Relations | Jul 2025 - Present</h4>
+                    <ul>
+                        <li>Lead the public relations team in frontline communications and organizational outreach initiatives.
+                        </li>
+                    </ul>
+
+                    <h4>Public Speaking Mentor | Nov 2024 - Mar 2025</h4>
+                    <ul>
+                        <li>Mentored over 60 IT students in an intensive 8-week public speaking program, resulting in significantly
+                            enhanced presentation skills and confidence.</li>
+                        <li>Collaborated with a team to design and structure a complete course syllabus with weekly lessons and
+                            practical exercises.</li>
+                        <li>Facilitated personalized coaching sessions to help students overcome public speaking anxiety and master
+                            professional communication.</li>
+                    </ul>
+
+                    <h4>Member | Oct 2023 - Present</h4>
+                    <ul>
+                        <li>Actively participated in workshops and events to develop spoken and written English communication
+                            skills.</li>
+                    </ul>
                 </div>
-
-                <div class="project-card">
-                    <h3>FINALIS JTI ADMIN</h3>
-                    <p>Comprehensive admin panel system for managing finalists at JTI (Jurusan Teknologi Informasi).
-                        Features include user management, data tracking, and reporting capabilities.</p>
-                    <div class="tech-stack">
-                        <span class="tech-tag">JavaFX</span>
-                        <span class="tech-tag">Sql Server</span>
-                        <span class="tech-tag">Desktop App</span>
-                        <span class="tech-tag">Java</span>
-                    </div>
-                    <br>
-                    <a href="https://github.com/vanstevanzaky/FINALIS-JTI-ADMIN" class="project-link"
-                        target="_blank">View Project</a>
+                <div class="section-image-container">
+                     <img src="img/ITDEC.jpg"
+                        alt="Foto kegiatan ITDEC">
                 </div>
             </div>
         </section>
 
-        <!-- Full-width Certificate Card at the bottom -->
-        <!-- <div class="certificate-fullwidth-card"
-            style="background: white; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin: 40px 0 0 0; padding: 40px 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
-            <img src="sertif.jpg" alt="Junior Web Developer Certificate"
-                style="max-width: 400px; width: 100%; border-radius: 10px; box-shadow: 0 2px 8px rgba(102,126,234,0.1); flex: 1 1 300px;">
-            <div style="flex: 2 1 400px;">
-                <h3 style="color: #667eea; font-size: 2em; margin-bottom: 15px;">Junior Web Developer Certificate
-                </h3>
-                <p style="color: #666; margin-bottom: 20px;">Official certificate from Digital Talent Scholarship,
-                    proving skills in modern web development and industry best practices.</p>
-                <div style="margin-bottom: 20px;">
-                    <span class="tech-tag">Certification</span>
-                    <span class="tech-tag">Web Development</span>
-                </div>
-                <a href="Sertifikat_STEVAN ZAKY SETYANTO_Junior Web Developer.pdf" class="project-link" target="_blank"
-                    style="padding: 12px 28px;">View Details</a>
+        <section class="section">
+            <h2>
+                Skills
+            </h2>
+            <h3>Technical Skills</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Laravel</span>
+                <span class="tech-tag">Microsoft SQL Server</span>
+                <span class="tech-tag">Python</span>
             </div>
-        </div>  -->
+
+            <h3>Soft Skills</h3>
+            <div class="tech-stack">
+                <span class="tech-tag">Team Collaboration</span>
+                <span class="tech-tag">Effective Communication</span>
+                <span class="tech-tag">Critical Thinking & Problem Solving</span>
+                <span class="tech-tag">Public Speaking & Presentation</span>
+                <span class="tech-tag">Database Design</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>
+                Projects
+            </h2>
+            <div class="projects-grid">
+
+                 <div class="project-card">
+                     <img src="img/PressAPP.jpg" alt="Screenshot PresApp" class="project-image">
+                     <div class="project-card-content">
+                         <h3>PresApp - Student Achievement Information System</h3>
+                         <p>
+                             A web-based information system designed for the Information Technology Department at State
+                             Polytechnic of Malang to streamline the recording of student achievements and provide competition
+                             recommendations. This application supports three user roles: Students, Lecturers, and
+                             Administrators, facilitating easier management and access to achievement data.
+                         </p>
+                         <ul>
+                             <li>Contributed to both front-end and back-end development, implementing key features for the
+                                 student, lecturer, and administrator roles.</li>
+                             <li>Assisted in the design and structuring of the database schema to efficiently manage user and
+                                 achievement data.</li>
+                             <li>Helped prepare essential project documentation, including the user manual, to ensure clarity and maintainability.</li>
+                         </ul>
+                         <div class="tech-stack">
+                             <span class="tech-tag">PHP</span>
+                             <span class="tech-tag">Laravel</span>
+                             <span class="tech-tag">MySQL</span>
+                             <span class="tech-tag">HTML</span>
+                             <span class="tech-tag">CSS</span>
+                             <span class="tech-tag">Bootstrap</span>
+                             <span class="tech-tag">Tailwind</span>
+                             <span class="tech-tag">JavaScript</span>
+                             <span class="tech-tag">Python (Recommendation Engine)</span>
+                             <span class="tech-tag">FastAPI</span>
+                         </div>
+                         <div class="project-links">
+                             <a href="https://presma.dbsnetwork.my.id/" class="project-link" target="_blank">View Website</a>
+                             <a href="https://drive.google.com/file/d/1MSS8jBmf8CXwoj8W3aUqaH95sCsL--mt/view?usp=drive_link"
+                                 class="project-link" target="_blank">View Manual Book</a>
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="project-card">
+                     <img src="img/Prestasicore.jpg" alt="Screenshot PrestasiCore" class="project-image">
+                     <div class="project-card-content">
+                         <h3>Student Achievement Recording System - Project-Based Learning (PBL)</h3>
+                         <p>
+                             A web-based application ('PrestasiCore') developed as a Project-Based Learning (PBL) initiative at State Polytechnic of Malang. It aimed to digitize the manual process of managing student non-academic achievements, offering an integrated digital solution for efficient recording, verification, and reporting. The system supports roles for students, administrators, and lecturers.
+                         </p>
+                         <ul>
+                             <li>Served as the **Database Designer**, responsible for creating an efficient, structured, and integrated database schema to support the application's needs.</li>
+                             <li>Managed the database schema throughout the project lifecycle.</li>
+                             <li>Collaborated with the team across various phases, including analysis, design, development, testing, and documentation.</li>
+                         </ul>
+                         <div class="tech-stack">
+                             <span class="tech-tag">PHP</span>
+                             <span class="tech-tag">JavaScript</span>
+                             <span class="tech-tag">HTML</span>
+                             <span class="tech-tag">CSS</span>
+                             <span class="tech-tag">Microsoft SQL Server</span>
+                         </div>
+                         <div class="project-links">
+                              <a href="https://drive.google.com/file/d/1-1B_Fi1HZ6NetbnEFOE3sYCRpGGwM79N/view?usp=drive_link"
+                                 class="project-link" target="_blank">View Final Report</a>
+                         </div>
+                     </div>
+                 </div>
+
+            </div> </section>
+        <section class="section">
+            <h2>
+                Certificate & Competition
+            </h2>
+            <div class="section-grid-container">
+                <div class="section-text-content">
+                    <h3>Juara 3 - Internal Competition 2024</h3>
+                    <h4>Project: "FindMySpot" (Kategori Teknologi Smart City)</h4>
+                    <p>I participated in the Internal Competition 2024, held by Information Technology Departemen Politeknik
+                        Negeri Malang, where my team and I secured 3rd place in the Smart City category for our project,
+                        "FindMySpot". This experience was crucial for developing my strategic thinking and problem-solving
+                        skills, as we designed a smart city application to address parking problem in Malang. The project
+                        showcases my ability to work collaboratively in a team to create innovative, technology-based solutions
+                        for real-world challenges.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Competition</span>
+                        <span class="tech-tag">Smart City</span>
+                        <span class="tech-tag">Problem Solving</span>
+                        <span class="tech-tag">Teamwork</span>
+                    </div>
+                </div>
+                <div class="section-image-container">
+                    <img src="img/Sertifikat.png" alt="Sertifikat Juara 3 Internal Competition 2024">
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>
+                Connect With Me
+            </h2>
+            <ul class="contact-list">
+                <li><strong>Phone:</strong> 0898-3484-850</li>
+                <li><strong>Email:</strong> <a href="mailto:sfralfarisi@gmail.com">sfralfarisi@gmail.com</a></li>
+                <li><strong>GitHub:</strong> <a href="https://github.com/safiroalfarisi/"
+                        target="_blank">github.com/safiroalfarisi</a></li>
+                <li><strong>LinkedIn:</strong> <a
+                        href="https://www.linkedin.com/in/safiro-alfarisi-haraya-002049306/"
+                        target="_blank">linkedin.com/in/safiro-alfarisi-haraya-002049306</a></li>
+            </ul>
+        </section>
 
         <footer>
-            <p>&copy; 2025 Safiro Alfarisi . All rights reserved.</p>
+            <p>&copy; 2025 Safiro Alfarisi Haraya. All rights reserved.</p>
         </footer>
     </div>
 </body>
